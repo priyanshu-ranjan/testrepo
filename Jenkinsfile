@@ -1,24 +1,29 @@
 pipeline {
          agent any
          stages {
-                 stage('One') {
+                 stage('Build') {
                  steps {
                      echo 'Hi, this is Priyanshu Ranjan'
                  }
                  }
-                 stage('Two') {
+                 stage('Deploy') {
                  steps {
-                    input('Do you want to proceed?')
+                    input('Do you want to proceed for testing?')
                  }
                  }
-                 stage('Three') {
+                 stage('Test') {
                  when {
                        not {
                             branch "master"
                        }
                  }
                  steps {
-                       echo "Hello"
+                       echo "Testing Done!"
+                 }
+                 }
+                 stage('Release') {
+                 steps {
+                    input('Product release succesful!')
                  }
                  }
                  
