@@ -23,7 +23,7 @@ pipeline {
                  }
                  stage('Release') {
                  steps {
-                    input('Product release succesful!')
+                    echo('Product release succesful!')
                  }
                  }
                  
