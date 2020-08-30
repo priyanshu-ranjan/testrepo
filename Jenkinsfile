@@ -6,12 +6,12 @@ pipeline {
                      echo 'Hi, this is Priyanshu Ranjan'
                  }
                  }
-                 stage('Deploy') {
+                 stage('Deployment') {
                  steps {
                     input('Do you want to proceed for testing?')
                  }
                  }
-                 stage('Test') {
+                 stage('Testing') {
                  when {
                        not {
                             branch "master"
