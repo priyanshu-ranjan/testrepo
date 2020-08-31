@@ -3,11 +3,10 @@ pipeline {
          stages {
                  stage('Build') {
                  steps {
-                     echo 'Hi, this is Priyanshu Ranjan'
-                     echo 'Running build phase...' 
+                    echo 'Running build phase...' 
                  }
                  }
-                 stage('Deployment') {
+                 stage('Post-Build') {
                  steps {
                     input('Do you want to proceed for testing?')
                  }
@@ -22,9 +21,9 @@ pipeline {
                        echo "Testing Done!"
                  }
                  }
-                 stage('Release') {
+                 stage('Deployment') {
                  steps {
-                    echo('Product release succesful!')
+                    echo('Product deployment succesful!')
                  }
                  }
                  
