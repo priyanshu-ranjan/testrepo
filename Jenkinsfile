@@ -4,6 +4,7 @@ pipeline {
                  stage('Build') {
                  steps {
                      echo 'Hi, this is Priyanshu Ranjan'
+                     echo 'Running build phase...' 
                  }
                  }
                  stage('Deployment') {
