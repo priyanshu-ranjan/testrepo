@@ -2,30 +2,19 @@ pipeline {
          agent any
          stages {
                  stage('Build') {
-                 steps {
-                    echo 'Running build phase...' 
-                 }
+                 steps { echo 'Running build phase...' }
                  }
                  stage('Post-Build') {
-                 steps {
-                    input('Do you want to proceed for testing?')
-                 }
+                 steps { input('Do you want to proceed for testing?') }
                  }
                  stage('Testing') {
                  when {
-                       not {
-                            branch "master"
-                       }
+                       not { branch "master" }
                  }
-                 steps {
-                       echo "Testing Done!"
-                 }
+                 steps { echo "Testing Done!" }
                  }
                  stage('Deployment') {
-                 steps {
-                    echo('Product deployment succesful!')
+                 steps { echo('Product deployment succesful!') }
                  }
-                 }
-                 
               }
 }
